@@ -1,0 +1,58 @@
+{% extends "blog/base.html" %}
+
+
+
+<style>
+.note
+{
+    text-align: center;
+    height: 80px;
+    background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+    color: #fff;
+    font-weight: bold;
+    line-height: 80px;
+}
+.form-content
+{
+    padding: 5%;
+    border: 1px solid #ced4da;
+    margin-bottom: 2%;
+}
+.form-control{
+    border-radius:1.5rem;
+}
+.btnSubmit
+{
+    border:none;
+    border-radius:1.5rem;
+    padding: 1%;
+    width: 20%;
+    cursor: pointer;
+    background: #0062cc;
+    color: #fff;
+}</style>
+
+{% block content %}
+
+
+<div class="form-content">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Join Today </legend>
+            {{form.as_p}}
+        </fieldset>
+
+        <div>
+            <button type="submit" class="btn btn-primary" style="background-color: #5f788a;" id="User">Submit</button>
+        </div>
+</form>
+<div class="border-top pt-4">
+    <small class="text-muted">
+    <a class="ml-2" href="#">Already have one</a>
+    </small>
+</div>
+
+</div>
+    
+{%endblock content%}
