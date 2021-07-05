@@ -29,6 +29,8 @@ def register(request):
     renderForm = {'form': form, 'activationRegister': 'active'}
     return render(request, urlChanger, renderForm)
 
-
+def login(request):
+    login_page = 'users/login.html'
+    return  render(request, login_page)
 
 
