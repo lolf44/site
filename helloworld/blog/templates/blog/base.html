@@ -29,13 +29,11 @@
               <div class="collapse navbar-collapse" id="navbarToggle">
                 <div class="navbar-nav mr-auto">
                   <a class="nav-item nav-link {{activationHome}}" href="{% url 'blog-home' %}">Home</a>
-
                   <a class="nav-item nav-link {{activationAbout}}" id="about" href="{% url 'blog-about' %}">About</a>
-
                 </div>
                 <!-- Navbar Right Side -->
                 <div class="navbar-nav">
-                  <a class="nav-item nav-link" href="#">Login</a>
+                  <a class="nav-item nav-link" {{activationLogin}} href="/login">Login</a>
                   <a class="nav-item nav-link {{activationRegister}}" href="/register">Register</a>
                 </div>
               </div>

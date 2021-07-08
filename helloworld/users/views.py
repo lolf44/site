@@ -14,9 +14,8 @@ context = {
 
 #TODO: add if user already exist
 def register(request):
-    urlChanger = 'users/register.html'
+    view_html = 'users/register.html'
     form = UserCreationForm()
-
     if request.method == 'POST':
         f = UserCreationForm(request.POST)
         print(request.POST)
@@ -29,7 +28,7 @@ def register(request):
             print("it didnt work")
 
     renderForm = {'form': form, 'activationRegister': 'active'}
-    return render(request, urlChanger, renderForm)
+    return render(request, view_html , renderForm)
 
 def Login(request):
     login_page = 'users/login.html'
@@ -41,8 +40,11 @@ def Login(request):
             print(user)
     else:
         form = AuthenticationForm(data=request.POST)
-
         #redirecet to blog post
         # TODO: stay logged in
         #return HttpResponseRedirect('../')
-    return render(request, 'templates/login.html', {'form': form})
+    return render(request, 'users/login.html', {'form': form, 'activationLogin': 'active'})
+
+
+                                                                                                                                                                                                       
+                                                                                                                                                                                                                            

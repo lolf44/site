@@ -1,11 +1,9 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-
 <form method="POST">
-    <input type="text" id="user">
-    <input class="pwd">
-    <input type="submit" id="send" >
+    <p>username: <input type="text" id="user"></p>
+    <p>password: <input class="pwd">
+    <input value="Login "type="submit" id="send" >
 </form>
-
 {%endblock content%}
