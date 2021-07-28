@@ -1,10 +1,12 @@
 from django.urls import path
 from users import views
 from . import views as blog_views
+
 urlpatterns = [
-    path('', blog_views.home, name="blog-home"),
-    path('about/', blog_views.about, name="blog-about"),
-    path('Post_blog/', blog_views.Post_blog, name="blog-Post_blog"),
-    path('register/', views.register, name='blog-register'),
-    path('login/', views.Login, name='blog-login'),
+    path('', blog_views.Home, name="blog-Home"),
+    path('about/', blog_views.About, name="blog-About"),
+    path('Post/', blog_views.Post, name="blog-Post"),
+    path('register/', views.Register, name='blog-Register'),
+    path('login/', views.Login, name='blog-Login'),
+    #path('error_auth/', views.Error_auth, name='blog-Error_auth'),  
 ]

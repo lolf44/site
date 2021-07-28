@@ -8,12 +8,10 @@ post_p = Post.objects.all()
 
 context = {
     'activationHome': "active",
-    'posts': post_p
+    'posts': post_p 
 }
 
-
-#TODO: add if user already exist
-def register(request):
+def Register(request):
     view_html = 'users/register.html'
     form = UserCreationForm()
     if request.method == 'POST':
@@ -26,7 +24,7 @@ def register(request):
             return HttpResponseRedirect('../')
         else:
             print("it didnt work")
-
+            return HttpResponseRedirect('error_login/')
     renderForm = {'form': form, 'activationRegister': 'active'}
     return render(request, view_html , renderForm)
 
@@ -43,8 +41,4 @@ def Login(request):
         #redirecet to blog post
         # TODO: stay logged in
         #return HttpResponseRedirect('../')
-    return render(request, 'users/login.html', {'form': form, 'activationLogin': 'active'})
-
-
-                                                                                                                                                                                                       
-                                                                                                                                                                                                                            
+    return render(request, 'users/login.html', {'form': form, 'activationLogin': 'active'})                                                                                                                                                                                                                                                                                                                                                                                                       
