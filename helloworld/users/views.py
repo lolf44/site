@@ -39,8 +39,8 @@ def Login(request):
     else:
         form = AuthenticationForm(data=request.POST)
 
-        # Make login Session here
+        # Make login Session here 
 
         # TODO: stay logged in
         return HttpResponseRedirect('../')
-    return render(request, 'users/login.html', {'form': form, 'activationLogin': 'active'}) 
+    return render(request, login_page, {'form': form, 'activationLogin': 'active'}) 
