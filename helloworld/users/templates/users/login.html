@@ -8,18 +8,32 @@
         margin-top: 10px;
         border-bottom-left-radius: 5px;
     }
+    .user_login_label{
+        padding-bottom: 10px;
+    }
+    .user_login_input{
+        padding-top: 10px;
+    }
+    .pwd_login_label{
+        padding-bottom: 10px;
+    }
+    pwd_login_input{
+        padding-top: 10px;
+    }
+
 </style>
 
 <div class=" form-div container border-bottom border-left">
     <form method="POST">
+        <!-- requiered: setting token for safe sending-->
             {% csrf_token %}
         <div class="form-group">
-            <label for="User">Username:</label>
-            <input type="User" class="form-control" placeholder="Enter your Username..." id="user">
+            <label class ="user_login_label" for="User">Username:</label>
+            <input class="user_login_input" type="User" class="form-control" placeholder="Enter your Username..." id="user">
         </div>
         <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" class="form-control" placeholder="Enter your password..." id="pwd">
+            <label class ="pwd_login_label" for="password">Password:</label>
+            <inputclass ="pwd+_login_label" type="password" class="form-control" placeholder="Enter your password..." id="pwd">
         </div>
         <div class="form-group form-check">
             <label class="form-check-label">

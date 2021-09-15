@@ -38,7 +38,9 @@ def Login(request):
             print(user)
     else:
         form = AuthenticationForm(data=request.POST)
-        #redirecet to blog post
+
+        # Make login Session here
+
         # TODO: stay logged in
-        #return HttpResponseRedirect('../')
-    return render(request, 'users/login.html', {'form': form, 'activationLogin': 'active'})                                                                                                                                                                                                                                                                                                                                                                                                       
+        return HttpResponseRedirect('../')
+    return render(request, 'users/login.html', {'form': form, 'activationLogin': 'active'}) 
