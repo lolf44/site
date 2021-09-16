@@ -1,20 +1,6 @@
 {% extends "blog/base.html" %}
 
-
-
-<style> 
-    .form-div{
-        margin-top: 10px;
-        border-bottom-left-radius: 5px;
-    }
     
-    .user_form{
-        margin: 200px 200px 200px 200px;
-    }
-    #blubb{
-        margin-top: 300px;
-    }
-</style>
 
 
 {% block content %}
@@ -23,16 +9,16 @@
     <form method="POST">
         <!-- requiered: setting token for safe sending-->
             {% csrf_token %}
-        <div class="form-group" id="blubb">
-            <label class ="user_login_label" for="User">Username:</label>
-            <input class="user_login_input" type="User" class="form-control" placeholder="Enter your Username..." id="user">
+        <div class="form-group" style="margin-bottom: 0.75em;">
+            <label for="User" style="padding-bottom: 0.15em;">Username:</label>
+            <input type="User" class="form-control" placeholder="Enter your Username..." id="user">
         </div>
-        <div class="form-group">
-            <label class ="pwd_login_label" for="password">Password:</label>
-            <inputclass ="pwd_login_label" type="password" class="form-control" placeholder="Enter your password..." id="pwd">
+        <div class="form-group" style="margin-bottom: 0.75em;">
+            <label for="password" style="padding-bottom: 0.15em;">Password:</label>
+            <input  type="password" class="form-control" placeholder="Enter your password..." id="pwd">
         </div>
-        <div class="form-group form-check">
-            <label class="form-check-label">
+        <div class="form-group form-check" style="margin-bottom: 0.5em;">
+            <label class="form-check-label" >
             <input class="form-check-input" type="checkbox"> Remember me
             </label>
         </div>

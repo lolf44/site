@@ -42,5 +42,5 @@ def Login(request):
         # Make login Session here 
 
         # TODO: stay logged in
-        return HttpResponseRedirect('../')
+        #return HttpResponseRedirect('../')
     return render(request, login_page, {'form': form, 'activationLogin': 'active'}) 
