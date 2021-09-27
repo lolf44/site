@@ -16,6 +16,3 @@ def About(request):
 
 def Post(request):
     return render(request, 'blog/Post.html', context)
-
-def Error(request):
-    return render(request, 'blog/error.html')
