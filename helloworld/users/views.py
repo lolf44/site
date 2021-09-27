@@ -14,6 +14,7 @@ context = {
 def Register(request):
     view_html = 'users/register.html'
     form = UserCreationForm()
+    error_message=False
     if request.method == 'POST':
         f = UserCreationForm(request.POST)
         print(request.POST)
@@ -24,7 +25,8 @@ def Register(request):
             return HttpResponseRedirect('../')
         else:
             print("it didnt work")
-            return HttpResponseRedirect('error_login/')
+            error_message=True
+            #return HttpResponseRedirect('../error_register/')
     renderForm = {'form': form, 'activationRegister': 'active'}
     return render(request, view_html , renderForm)
 
@@ -38,9 +40,12 @@ def Login(request):
             print(user)
     else:
         form = AuthenticationForm(data=request.POST)
-
         # Make login Session here 
-
         # TODO: stay logged in
         #return HttpResponseRedirect('../')
     return render(request, login_page, {'form': form, 'activationLogin': 'active'}) 
+
+def Error_register(request):
+    error_page = 'users/error_register.html'
+    
+    return render(request, error_page)    

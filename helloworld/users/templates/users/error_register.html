@@ -1,0 +1,18 @@
+{% extends "blog/base.html" %}
+
+    
+
+
+{% block content %}
+
+<div class="container ">
+    <h1 class="h1">Error 501 - Bad request</h1>
+    <h4 class="h4">Something went Wrong please make sure that your Input is valid</h4>
+    <h4 class="h4">You will be automaticly redirected back</h4>
+    <script>
+    setTimeout(function() {
+     window.location.href = "{% url 'blog-Register' %}" // Do something after 5 seconds
+    }, 5000);
+    </script>
+</div>
+{%endblock content%}
