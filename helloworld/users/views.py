@@ -4,12 +4,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from blog.models import Post
 from django.contrib.auth import login
 
-post_p = Post.objects.all()
-
-context = {
-    'activationHome': "active",
-    'posts': post_p 
-}
+error_message=False
 
 def Register(request):
     view_html = 'users/register.html'
@@ -26,11 +21,12 @@ def Register(request):
         else:
             print("it didnt work")
             error_message=True
-            #return HttpResponseRedirect('../error_register/')
+            return HttpResponseRedirect('../error_register/')
     renderForm = {'form': form, 'activationRegister': 'active'}
     return render(request, view_html , renderForm)
 
 def Login(request):
+    redirect = False
     login_page = 'users/login.html'
     if request.method  == 'POST':
         form = AuthenticationForm(data=request.POST)
@@ -38,14 +34,18 @@ def Login(request):
             user = form.get_user()
             login(request, user)
             print(user)
+            redirect = True
+            return HttpResponseRedirect('../')
     else:
         form = AuthenticationForm(data=request.POST)
-        # Make login Session here 
-        # TODO: stay logged in
-        #return HttpResponseRedirect('../')
+    #while request is False:
+    error_message=True
     return render(request, login_page, {'form': form, 'activationLogin': 'active'}) 
 
 def Error_register(request):
     error_page = 'users/error_register.html'
-    
     return render(request, error_page)    
+
+def UserProfile(request):
+    page_template = 'users/Profile.html'
+    return render(request, page_template)
