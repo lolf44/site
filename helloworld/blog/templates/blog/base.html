@@ -34,9 +34,10 @@
               <a class="nav-item nav-link {{activationAbout}}" id="about" href="{% url 'blog-About' %}">About</a>
             </div>
             <!-- Navbar Right Side -->
-            <div class="navbar-nav" style="float: left;!important">
-              <a class="nav-item nav-link" {{activationLogin}} href="{% url 'blog-Login' %}">Login</a>
+            <div class="navbar-nav" style="float: Right;!important">
+              <a class="nav-item nav-link {{activationLogin}}" href="{% url 'blog-Login' %}">Login</a>
               <a class="nav-item nav-link {{activationRegister}}" href="{% url 'blog-Register' %}">Register</a>
+              <a class="nav-item nav-link {{activationProfile}}" href="{% url 'blog-Profile' %}">Profile</a>
             </div>
           </div>
         </div>

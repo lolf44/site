@@ -9,5 +9,5 @@ urlpatterns = [
     path('register/', user_views.Register, name='blog-Register'),
     path('login/', user_views.Login, name='blog-Login'),  
     path('error_register/', user_views.Error_register, name='blog-Error_register'),
-    path('register/', user_views.UserProfile, name='blog-Profile'),
+    path('profile/', user_views.UserProfile, name='blog-Profile'),
 ]

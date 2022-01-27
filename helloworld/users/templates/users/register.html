@@ -43,15 +43,13 @@
         </fieldset>
         <div>
             <button type="submit" class="btn btn-primary" style="background-color: #5f788a;" id="User">Submit</button>
+            <a class="ml-2" style="float: right; padding-top: 5%" href="{% url 'blog-Login' %}">Already have one ALLA</a>
         </div>
-    {% if error_message == True%}<p>bulbb</p>{% endif %}
-</form>
-<div class="border-top pt-4">
-    <small class="text-muted">
-    <a class="ml-2" href="{% url 'blog-Login' %}">Already have one ALLA</a>
-    </small>
-</div>
-
+        {% if error_message == True%}<p>bulbb</p>{% endif %}
+    </form>
+    <div class="border-top pt-4">
+        <small class="text-muted">du stinkst in grau</small>
+    </div>
 </div>
     
 {%endblock content%}

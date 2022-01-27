@@ -3,8 +3,16 @@ from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from blog.models import Post
 from django.contrib.auth import login
+from .models import User
 
 error_message=False
+
+user_objects = User.objects.all()
+
+User_context = {
+    'user_info': user_objects,
+    'activationProfile': 'active'
+}
 
 def Register(request):
     view_html = 'users/register.html'
@@ -23,7 +31,7 @@ def Register(request):
             error_message=True
             return HttpResponseRedirect('../error_register/')
     renderForm = {'form': form, 'activationRegister': 'active'}
-    return render(request, view_html , renderForm)
+    return render(request, view_html ,renderForm)
 
 def Login(request):
     redirect = False
@@ -47,5 +55,5 @@ def Error_register(request):
     return render(request, error_page)    
 
 def UserProfile(request):
-    page_template = 'users/Profile.html'
-    return render(request, page_template)
+    page_template = 'users/profile.html'
+    return render(request, page_template, User_context)

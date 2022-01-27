@@ -1,6 +1,13 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-<!-- TASK: build something usefull here pls its time-->
-        <h1>Blog about!</h1>
+        <h1 class="block-content">hi im profile please make me or i will get punished </h1>
+        
+        {% if user_info %}
+            {% for users in user_info %}
+                <p>{{users.password}} || {{users.password}} </p>
+            {% endfor%}
+        {% else %}
+            <p>fuck you</p>
+        {% endif %}
 {%endblock content%}
